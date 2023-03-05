@@ -1,18 +1,22 @@
+#Super simple exponential moving average application to images
+#No license; for demonstration purposes
 import os
 import numpy as np
 import cv2
 from PIL import Image
 
 # Set the path for the input and output directories
-input_dir = "insert/input/directory/here"
-output_dir = "insert/output/directory/here"
+input_dir = "C:/Users/spez/desktop/images/in"
+output_dir = "C:/Users/spez/desktop/images/out"
+# Set the strength here or at function call
+ema_strength = 0.5
 
 # Create the output directory if it does not exist
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 
 # Exponential moving average EMA "deflicker"
-def deflicker(images, strength=0.5):
+def deflicker(images, strength=ema_strength):
     #Make an array out of all of 'em
     image_array = np.array(images)
 
