@@ -9,14 +9,14 @@ from PIL import Image
 input_dir = "C:/Users/spez/desktop/images/in"
 output_dir = "C:/Users/spez/desktop/images/out"
 # Set the strength here or at function call
-ema_strength = 0.5
+ema_weight = 0.9
 
 # Create the output directory if it does not exist
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 
 # Exponential moving average EMA "deflicker"
-def deflicker(images, strength=ema_strength):
+def deflicker(images, strength=ema_weight):
     #Make an array out of all of 'em
     image_array = np.array(images)
 
